@@ -204,6 +204,19 @@ export default class app_csarnok_kontroll extends aa_app {
       this.button_set();
     });
 
+    // preload - optional?
+    this.image_cache = new Array;
+    const cache_path = ["data/hun/aktiv/","data/hun/inaktiv/","data/hun/push/","data/eng/aktiv/","data/eng/inaktiv/","data/eng/push/"];
+    for (const f of filters)
+    {
+      for (const p of cache_path)
+      {
+        var img = new Image;
+        img.src = p+f[0]+".png";
+        this.image_cache.push(img);
+      }
+    }
+
     this.reset_buttons();
     this.button_set();
     this.screenLoaded();
