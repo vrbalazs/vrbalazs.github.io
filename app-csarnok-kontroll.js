@@ -207,11 +207,20 @@ export default class app_csarnok_kontroll extends aa_app {
     // preload - optional?
     this.image_cache = new Array;
     const cache_path = ["data/hun/aktiv/","data/hun/inaktiv/","data/hun/push/","data/eng/aktiv/","data/eng/inaktiv/","data/eng/push/"];
+    this.cache_ref = 0;
     for (const f of filters)
     {
+      if (f[0]!=="szurok")
       for (const p of cache_path)
       {
+        ++this.cache_ref;
         var img = new Image;
+        img.onload = () =>
+        {
+          if (!--this.cache_ref)
+            this.screenLoaded();
+
+        };
         img.src = p+f[0]+".png";
         this.image_cache.push(img);
       }
@@ -219,7 +228,7 @@ export default class app_csarnok_kontroll extends aa_app {
 
     this.reset_buttons();
     this.button_set();
-    this.screenLoaded();
+    //this.screenLoaded();
   }
 
   static start() {
