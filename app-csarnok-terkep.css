@@ -1,0 +1,386 @@
+#map00 {
+  left: 600px;
+  bottom: 0px;
+  width: 928px;
+  height: 1080px;
+}
+
+#map10 {
+  width: 1370px;
+  height: 1080px;
+  top: 0px;
+  left: 158px;
+}
+
+.map0-default {
+  left: 600px;
+  bottom: 0px;
+  width: 928px;
+  height: 1080px;
+}
+
+.map1-default {
+  width: 1370px;
+  height: 1080px;
+  top: 0px;
+  left: 158px;
+}
+
+.map0-profile{
+  left: 10px;
+  top: 250px;
+  width: 1690px;
+  height: 770px;
+}
+
+.map1-profile {
+  left: 10px;
+  top: 1330px;
+  width: 1690px;
+  height: 770px;
+}
+
+.map-off {
+  left: 0px;
+  top: 0px;
+  width: 0px;
+  height: 0px;
+}
+
+
+.empty
+{
+  position:absolute;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  display: flex;
+  /* padding: 2px; */
+  /* box-sizing: border-box; */
+  font-weight: bold;
+  font-size: 64px;
+  width: 150px;
+  height: 150px;
+  color: #ffffff;
+  transition: 0.1s;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.textbox
+{
+  padding: 16px;
+  background-color:#CCEEFA;
+  color: #518497;
+  font-size: 32px;
+  align-items: left;
+  justify-content: center;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+.icon
+{
+  position:absolute;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  width: 170px;
+  height: 170px;
+}
+
+.playing
+{
+  position:absolute;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  width: 170px;
+  height: 170px;
+  z-index: 100;
+  transition: opacity 0.2s;
+  touch-action:unset;
+}
+
+.inverted
+{
+  filter:invert(100%);
+}
+
+.map {
+  position: absolute;
+  overflow: hidden;
+  border: 8px solid #22194D;
+  border-radius: 32px;  
+  /* transition: all 0.8s; */
+}
+
+#wrapper {
+  background-color: #22194D;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.ol-overlaycontainer-stopevent {
+  z-index: 2 !important;
+}
+
+.ol-attribution, .ol-attribution * {
+  pointer-events: none !important;
+  color: #333;
+  text-decoration: none;
+}
+.ol-attribution::before {
+  content: '© MapTiler';
+  padding-left: 5px;
+}
+
+.mapcanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* contain: layout; */
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 1100px) {
+  .mobile { display: none; }
+}
+
+@media (max-width: 1099px) {
+  .desktop { display: none; }
+}
+
+#carousel-aranyak
+{
+  position: absolute;
+  top:1370px;
+  left:150px;
+  width:150px;
+  height:750px;
+}
+
+#carousel-sportag
+{
+  position: absolute;
+  top:1370px;
+  left:300px;
+  width:150px;
+  height:750px;
+}
+
+#carousel-oev
+{
+  position: absolute;
+  top:1370px;
+  left:450px;
+  width:150px;
+  height:750px;
+}
+
+#carousel-nevek1
+{
+  position: absolute;
+  top:1120px;
+  left:1535px;
+  width:370px;
+  height:1000px;
+}
+
+#carousel-nevek2
+{
+  position: absolute;
+  top:40px;
+  left:1535px;
+  width:370px;
+  height:1000px;
+}
+
+.invisible
+{
+  opacity:0;
+
+}
+
+.carousel-component::-webkit-scrollbar {
+  display: none
+}
+
+.carousel-element {
+  border: 8px solid #22194D;
+  border-radius: 32px;  
+  display: flex;
+  /* padding: 2px; */
+  /* box-sizing: border-box; */
+  font-weight: bold;
+  font-size: 16px;
+  width: 150px;
+  height: 150px;
+  background-color: #CBEEFB;
+  color: #41788B;
+  transition: 0.1s;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-nevek-element {
+  border: 8px solid #22194D;
+  border-radius: 32px;  
+  display: flex;
+  padding: 32px;
+  /* box-sizing: border-box; */
+  font-weight: bold;
+  font-size: 20px;
+  width: 370px;
+  height: 100px;
+  background-color: #CBEEFB;
+  color: #41788B;
+  /* transition: 0.25s; */
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+}
+
+.idle-sportag {
+  background-color: #CBCFFC;
+  color: #4F58BF;
+}
+
+.idle-oev {
+  background-color: #CCEEFA;
+  color: #44788D;
+}
+
+.idle-aranyak {
+  background-color: #FFE1BD;
+  color: #CA7717;
+}
+
+.idle-nem {
+  background-color: #FBF2CB;
+  color: #98842B;
+}
+
+.idle-csapat {
+  background-color: #CCFBE9;
+  color: #169A68;
+}
+
+.idle-reset {
+  background-color: #39346C;
+  color: #9AA8E9;
+}
+
+.selected-sportag {
+  background-color: #4E57C0;
+  color: #FFFFFF;
+}
+
+.selected-oev {
+  background-color: #42798D;
+  color: #FFFFFF;
+}
+
+.selected-aranyak {
+  background-color: #C97714;
+  color: #FFFFFF;
+}
+
+.selected-nem {
+  background-color: #98842E;
+  color: #FFFFFF;
+}
+
+.selected-csapat {
+  background-color: #179A68;
+  color: #FFFFFF;
+}
+
+.selected-reset {
+  background-color: #FF1919;
+  color: #FFFFFF;
+}
+
+.disabled-all {
+  background-color: #7F7B96;
+  color: #716D88;
+}
+
+#touchcover {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  touch-action: ignore;
+  z-index: -5000;
+}
+
+.grid-photo {
+  position:absolute;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  /* padding: 16px; */
+  background-color:#CCEEFA;
+  /* color: #518497; */
+  /* font-size: 32px; */
+  align-items: center; 
+  /* justify-content: center; */
+  text-align: center;
+  /* white-space: pre-wrap; */
+}
+
+.photo
+{
+  position:relative;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  width: 150px;
+  height: 150px;
+}
+
+.grid-video {
+  position:absolute;
+  /* border: 8px solid #99A8EB; */
+  /* border-radius: 32px;   */
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* padding: 16px; */
+  background-color:#22194D;
+  /* color: #518497; */
+  /* font-size: 32px; */
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+  /* white-space: pre-wrap; */
+}
+
+.video
+{
+  position:relative;
+  border: 2px solid #99A8EB;
+  border-radius: 32px;  
+  width: 807px;
+  height: 332px;
+}
+
+#fulltop
+{
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:1920px;
+  height:1080px;
+  z-index:100;
+  transition:0.2s;
+  /* opacity:0; */
+}
+
+/******************************************************/
+#dummy-app-csarnok-terkep {width:1px}

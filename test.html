@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Skanzen WWI app</title>
+  <style>
+   * { touch-action: none }
+  </style>
+</head>
+<body style="
+  background: url(test.jpg) no-repeat center center fixed;
+  background-size: 100% 100%;
+">
+	<div id="fpsdiv" style="position:fixed; top:5px; left:5px; z-index:6; font-family:monospace; color:#dd0; font-size:40px"></div>
+	<div id="testrect" style="position:fixed; width:200px; height:200px; border:3px solid red; top:50%; left:50%; z-index:5;"></div>
+	<canvas id="canvas" style="width:100%; height:100%; position:absolute; top:0; left:0;"></canvas>
+	<!-- <video id="vid" autoplay loop width="1920" height="1080" style="width:1920px; height:1080px; left:0px; top:0px; position:absolute;"> -->
+		<!-- <source src="movie.mp4" type="video/mp4"> -->
+	<!-- </video> -->
+	<script>
+		///!///document.getElementById('vid').play();
+	
+		const canvas = document.getElementById('canvas');
+		let width = 0;
+		let height = 0;
+		let ctx = null;
+		let frametimes = [];
+		const points = {};
+		
+		function draw(e, start) {
+			if (start) {
+				ctx.beginPath();
+				ctx.arc(e.touches[0].clientX, e.touches[0].clientY, 30, 0, 2 * Math.PI, false);
+				ctx.fillStyle = 'green';
+				ctx.fill();
+			}
+
+			ctx.beginPath();
+			ctx.strokeStyle = '#ff00ff';
+			ctx.lineWidth = 10;
+
+			for (const touch of e.touches) {
+				//console.log('touch: '+touch.clientX+','+touch.clientY);				///!///
+				const p = {x: touch.clientX, y: touch.clientY };
+				const lastp = points[touch.identifier] || p;
+				ctx.moveTo(lastp.x, lastp.y);
+				ctx.lineTo(p.x, p.y);
+				points[touch.identifier] = p;
+			}
+			ctx.stroke();
+		}
+		
+		function resize() {
+			width = canvas.width = window.innerWidth;
+			height = canvas.height = window.innerHeight;
+			ctx = canvas.getContext('2d');
+		}
+
+		function fadeout() {
+			ctx.fillStyle = 'rgba(255,255,255,0.15)';
+			ctx.fillRect(0, 0, width, height);
+			requestAnimationFrame(fadeout);
+		}
+
+		window.addEventListener('touchmove', (e)=> draw(e) );
+		window.addEventListener('touchstart', (e)=> draw(e, true) );
+		window.addEventListener('touchend', (e)=> {
+			for (const touch of e.changedTouches) {
+				delete points[touch.identifier];
+			}
+		});
+		
+		window.addEventListener('resize', (e)=> resize() );
+		resize();
+		fadeout();
+		
+		function rotate() {
+			this.rot = (this.rot || 0)+2;
+			testrect.style.transform = `translate(-50%,-50%) rotate(${this.rot}deg)`;
+			requestAnimationFrame(rotate);
+
+			const t = Date.now();
+			frametimes = frametimes.concat([t]).slice(-500);
+			const dt = t - frametimes[0];
+			fpsdiv.innerHTML = (dt?frametimes.length/dt*1000:0).toFixed(2);
+		}
+		
+		//testrect.innerHTML = 'Useragent: ' + navigator.userAgent;
+		//const a = {b: {c:"22"}};
+		//testrect.innerHTML = 'Hello ' + (a.b?.c) + ' ' + (a.d?.c ?? 'N/A');
+		
+		rotate();
+		
+	</script>
+</body>
+</html>
+

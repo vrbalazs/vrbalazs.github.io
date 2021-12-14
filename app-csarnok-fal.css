@@ -1,0 +1,77 @@
+#wrapper {
+  width: 100%;
+  height: 100%;
+  bottom: auto;
+  background-color: #000000;
+  touch-action: none;
+}
+
+.background {
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  display: fixed;
+}
+
+.image {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  width: 264px;
+  height: 352px;
+  position: fixed;
+  transition: 0.25s;
+}
+
+.wallpaper {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+/*  width: 1080px;
+  height: 1920px;*/
+  position: fixed;
+  transition: 0.25s;
+/*  opacity: 0.2;*/
+}
+
+.deselected {
+  opacity : 0.2;
+}
+
+.hidden {
+  opacity : 0;
+}
+
+.scroll {
+  background-color: #000000;
+  color: #e0e0e0;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  height: 640px;
+  width: 4500px;
+  font-weight: bold;
+  font-size: 220px;
+}
+
+
+.title {
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px rgba(0,0,0, 0.7);
+}
+
+/* -------------------------------- */
+#dummy-app-csarnok-fal {width:1px}

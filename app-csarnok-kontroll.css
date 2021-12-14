@@ -1,0 +1,125 @@
+#wrapper {
+  width: 100%;
+  height: 100%;
+  bottom: auto;
+  background-color: #231B4F;
+  touch-action: none;
+}
+
+.grid-container0 {
+  display: grid;
+  grid-template-columns: 20% 10% 10% 10% 10% 10% 10% 10% 10%
+}
+
+.grid-container1 {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%
+}
+
+/*.grid-item {
+  background-color: #231B4F;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.background {
+  background-color: rgb(98, 110, 167);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}*/
+
+.button-hover {
+  background-color: #800000;
+}
+
+.idle-sportag {
+  background-color: #CBCFFC;
+  color: #4F58BF;
+}
+
+.idle-oev {
+  background-color: #CCEEFA;
+  color: #44788D;
+}
+
+.idle-aranyak {
+  background-color: #FFE1BD;
+  color: #CA7717;
+}
+
+.idle-nem {
+  background-color: #FBF2CB;
+  color: #98842B;
+}
+
+.idle-csapat {
+  background-color: #CCFBE9;
+  color: #169A68;
+}
+
+.idle-reset {
+  background-color: #39346C;
+  color: #9AA8E9;
+}
+
+.selected-sportag {
+  background-color: #4E57C0;
+  color: #FFFFFF;
+}
+
+.selected-oev {
+  background-color: #42798D;
+  color: #FFFFFF;
+}
+
+.selected-aranyak {
+  background-color: #C97714;
+  color: #FFFFFF;
+}
+
+.selected-nem {
+  background-color: #98842E;
+  color: #FFFFFF;
+}
+
+.selected-csapat {
+  background-color: #179A68;
+  color: #FFFFFF;
+}
+
+.selected-reset {
+  background-color: #FF1919;
+  color: #FFFFFF;
+}
+
+.disabled-all {
+  background-color: #7F7B96;
+  color: #716D88;
+}
+
+.title {
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px rgba(0,0,0, 0.7);
+}
+
+.button {
+  position: fixed;
+  transition: 0.25s;
+}
+
+.button2 {
+  position: fixed;
+  transition: 0.25s;
+}
+
+/* -------------------------------- */
+#dummy-app-csarnok-kontroll {width:1px}
